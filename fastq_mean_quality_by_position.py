@@ -1,3 +1,5 @@
+#Calculates the mean Phred quality score at each base across all FASTQ reads, returns how many bases are below defined threshold
+
 import sys
 import argparse
 from Bio import SeqIO
@@ -5,7 +7,7 @@ from Bio.SeqIO.QualityIO import FastqGeneralIterator # came across when finding 
 
 # Function to parse command line arguments
 def check_arg(args=None):
-    parser = argparse.ArgumentParser(description="Generate the adjacency list of a de Bruijn graph from sequencing reads.")
+    parser = argparse.ArgumentParser(description="Calculates mean Phred quality score at each base and returns how many are below threshold.")
     parser.add_argument("-i", "--input", help="input file", required=True)
     parser.add_argument("-o", "--output", help="output file", required=True)
     return parser.parse_args(args)
