@@ -1,9 +1,11 @@
+#Computes N50 and N75 values from a list of contigs by sorting lengths, calculating thresholds, and finding contig length at each threshold
+
 import sys
 import argparse
 
 # Function to parse command line arguments
 def check_arg(args=None):
-    parser = argparse.ArgumentParser(description="Generate the adjacency list of a de Bruijn graph from sequencing reads.")
+    parser = argparse.ArgumentParser(description="Computes N50 and N75 values from a list of contig sequences.")
     parser.add_argument("-i", "--input", help="input file", required=True)
     parser.add_argument("-o", "--output", help="output file", required=True)
     return parser.parse_args(args)
@@ -12,7 +14,6 @@ def check_arg(args=None):
 arguments = check_arg(sys.argv[1:])
 infile = arguments.input
 outfile = arguments.output
-# ^all from class
 
 with open(infile, 'r') as file:
     contigs = [line.strip() for line in file] #iterates for all lines in file, strips
