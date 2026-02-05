@@ -1,3 +1,5 @@
+#computes edit distance between 2 FASTA format sequences and constructs the global allignment according to the needleman wunsch algorithm
+
 import sys
 import argparse
 
@@ -17,7 +19,6 @@ def check_arg(args=None):
 arguments = check_arg(sys.argv[1:])
 infile = arguments.input
 outfile = arguments.output
-#everything above from class
 
 #open file as read obj, read lines to form a list of lines
 with open(infile, 'r') as file:
@@ -87,4 +88,4 @@ while x > 0 or y > 0: #so we dont go out of bounds, and works if one seq is long
 with open(outfile, 'w') as output:
     output.write(str(m[q1][q2]) + "\n" + seq1 + "\n" + seq2) #next line command inbetween 3, seq1 and seq2. Aligns properly. 
 
-#python HW2Q2.py --input <> --output <>
+#python needleman_wunsch_algorithm.py --input <> --output <>
