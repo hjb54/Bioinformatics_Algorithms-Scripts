@@ -1,3 +1,7 @@
+#computes the Levenshtein edit distance between two sequences in FASTA format
+#script parses the input file, extracts two sequence entries, initializes a dynamic programming matrix, and calculates the minimum number of edits 
+#(insertions, deletions, substitutions) required to transform one sequence into the other.
+
 import sys
 import argparse
 
@@ -66,4 +70,4 @@ for i in range(1, q1 + 1):
 with open(outfile, 'w') as output:
     output.write(str(m[q1][q2]))
 
-#python HW2Q1.py --input <> --output <>
+#python levenshtein_distance_fasta.py --input <> --output <>
