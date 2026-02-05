@@ -1,10 +1,12 @@
+#Count the number of FASTQ reads that meet defined quality and percentage thresholds using Phred scores parsed with Biopython
+
 import sys
 import argparse
 from Bio import SeqIO
 
 # Function to parse command line arguments
 def check_arg(args=None):
-    parser = argparse.ArgumentParser(description="Generate the adjacency list of a de Bruijn graph from sequencing reads.")
+    parser = argparse.ArgumentParser(description="Count the number of FASTQ reads that meet defined quality and percentage thresholds using Phred scores.")
     parser.add_argument("-i", "--input", help="input file", required=True)
     parser.add_argument("-o", "--output", help="output file", required=True)
     return parser.parse_args(args)
@@ -13,7 +15,6 @@ def check_arg(args=None):
 arguments = check_arg(sys.argv[1:])
 infile = arguments.input
 outfile = arguments.output
-#^all from class
 
 accepted = 0 #counter for reads that meet expectations
 
