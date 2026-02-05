@@ -1,3 +1,5 @@
+#Generates the adjacency list of a de Bruijn graph from sequencing reads by generating k-mer pre/suffix edges for both reads and their reverse compliments.
+
 import sys
 import argparse
 from collections import defaultdict
